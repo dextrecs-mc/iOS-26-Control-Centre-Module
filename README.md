@@ -39,7 +39,6 @@ A **systemless module** that places the iOS 26-style Control Centre SystemUI plu
 
 | Component | Description |
 |---|---|
-| `system/` overlay | Mounts the plugin in the correct SystemUI location |
 | `module.prop` | Module metadata |
 | `customize.sh` / install logic | Systemless install script |
 | Bundled APK | Original SystemUI plugin, **unmodified** |
@@ -84,11 +83,10 @@ The value here is the **installation method**, not the APK itself.
 ### Magisk
 
 - Boot into **safe mode** — hold **Volume Down** during boot until it vibrates. Modules are disabled automatically.
-- Or flash the module's `uninstall.zip` from recovery.
 - Or remove the module folder via `adb`:
 
 ```sh
-adb shell su -c "rm -rf /data/adb/modules/ios_18_26_cc"
+adb shell su -c "rm -rf /data/adb/modules/ios_26_cc"
 ```
 
 ### KernelSU / APatch
@@ -96,7 +94,7 @@ adb shell su -c "rm -rf /data/adb/modules/ios_18_26_cc"
 - Boot to recovery and delete the module folder:
 
 ```sh
-adb shell su -c "rm -rf /data/adb/modules/ios_18_26_cc"
+adb shell su -c "rm -rf /data/adb/modules/ios_26_cc"
 ```
 
 - Or use the manager's **"Disable module"** option if you can still reach it.
@@ -124,7 +122,7 @@ adb shell su -c "rm -rf /data/adb/modules/ios_18_26_cc"
 
 - **Magisk:** Modules → find `iOS 26 Control Centre` → Remove → Reboot.
 - **KernelSU / APatch:** Manager → Modules → disable or uninstall → Reboot.
-- **Manual:** delete `/data/adb/modules/ios_18_26_cc` and reboot.
+- **Manual:** delete `/data/adb/modules/ios_26_cc` and reboot.
 
 Because the module is **systemless**, removal leaves no trace in `/system`.
 
