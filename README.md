@@ -28,7 +28,7 @@
 
 ## 🧩 What this is
 
-A **systemless module** that places the iOS 18/26-style Control Centre SystemUI plugin where HyperOS 3 expects it — without permanently modifying `/system`.
+A **systemless module** that places the iOS 26-style Control Centre SystemUI plugin where HyperOS 3 expects it — without permanently modifying `/system`.
 
 - ✅ Nothing in `/system` is touched permanently
 - ✅ Fully removable by disabling or uninstalling the module
@@ -69,8 +69,11 @@ The value here is the **installation method**, not the APK itself.
 
 1. Download the latest `.zip` from [**Releases**](../../releases).
 2. Flash it in **Magisk / KernelSU / APatch**.
-3. Reboot.
-4. If SystemUI crashes or the device bootloops → go to [**Recovery**](#-recovery).
+3. **Reboot once** to let the systemless overlay mount.
+4. **Reboot a second time** — the Control Centre may not appear until after this second reboot. This is expected and not a bug.
+5. If SystemUI crashes or the device bootloops → go to [**Recovery**](#-recovery).
+
+> 💡 **Tip:** If the module appears installed but nothing has changed after two reboots, try clearing SystemUI's cache or re-flashing the module, then reboot again.
 
 ---
 
@@ -119,7 +122,7 @@ adb shell su -c "rm -rf /data/adb/modules/ios_18_26_cc"
 
 ## 🗑 Uninstalling
 
-- **Magisk:** Modules → find `iOS 18/26 Control Centre` → Remove → Reboot.
+- **Magisk:** Modules → find `iOS 26 Control Centre` → Remove → Reboot.
 - **KernelSU / APatch:** Manager → Modules → disable or uninstall → Reboot.
 - **Manual:** delete `/data/adb/modules/ios_18_26_cc` and reboot.
 
