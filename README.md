@@ -110,7 +110,7 @@ adb shell su -c "rm -rf /data/adb/modules/ios_18_26_cc"
 
 | Device | HyperOS version | Status | Notes |
 |---|---|---|---|
-| _(add yours)_ | HyperOS 3 | ✅ Works | |
+| Redmi Note 14 4G | HyperOS 3 | ✅ Works | |
 | | | | |
 
 > **Help build this table** — open an issue with your **device model**, **HyperOS version**, and **result** (works / crashes / bootloop). Every report makes this safer for the next person.
